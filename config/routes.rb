@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :books do
-    resources :reviews, only: [:show, :new, :create]
+    resources :reviews
   end
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"

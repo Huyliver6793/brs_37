@@ -3,11 +3,11 @@ class Book < ApplicationRecord
 
   belongs_to :category
 
-  has_many :reviews
-  has_many :book_users
-  has_many :users, through: :book_users
+  has_many :reviews, dependent: :destroy
+  has_many :book_users, dependent: :destroy
+  has_many :users, through: :book_users, dependent: :destroy
   has_many :book_tags, dependent: :destroy
-  has_many :tags, through: :book_tags
+  has_many :tags, through: :book_tags, dependent: :destroy
 
   has_attached_file :book_img, styles: {book_index: "100x100>>", book_show: "200x300>"},
     default_url: "/images/:style/missing.png"
