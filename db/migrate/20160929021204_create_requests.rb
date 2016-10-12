@@ -3,7 +3,7 @@ class CreateRequests < ActiveRecord::Migration[5.0]
     create_table :requests do |t|
       t.string :title
       t.text :content
-      t.boolean :status
+      t.boolean :status, default: false
       t.references :user, foreign_key: true
 
       t.timestamps

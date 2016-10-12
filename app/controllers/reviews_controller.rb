@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :load_book, only: :create
+  before_action :load_book
   before_action :load_review, only: [:destroy, :edit, :update]
 
   def create
