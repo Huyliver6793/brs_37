@@ -7,8 +7,8 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new request_params
     if @request.save
-      flash[:success] = t "create_request"
-      redirect_to root_path
+      flash[:success] = t "request.create_request"
+      redirect_to requests_path
     else
       render :new
     end
