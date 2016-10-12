@@ -36,7 +36,6 @@ class ReviewsController < ApplicationController
   end
 
   def load_book
-    @book = Book.find_by id: params[:book_id]
     if @book.nil?
       flash[:danger] = t "book_nil"
       redirect_to root_path
