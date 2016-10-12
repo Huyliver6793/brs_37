@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-info">
+        <%= t "request.title_head" %>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>
+              <%= t "request.title" %>
+            </th>
+            <th>
+              <%= t "request.content" %>
+            </th>
+            <th>
+              <%= t "request.created_at" %>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @request.each do |request| %>
+          <tr class="active">
+            <td>
+              <%= request.title %>
+            </td>
+            <td>
+              <%= request.content %>
+            </td>
+            <td>
+              <%= request.created_at %>
+            </td>
+          </tr>
+          <% end %>
+       </tbody>
+      </table>
+    </div>
+  </div>
+</div>

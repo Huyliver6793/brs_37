@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form_main">
+        <h4 class="heading"><strong><%= t "request.heading" %></strong>
+          <%= t "request.strong" %><span></span>
+        </h4>
+        <div class="form">
+          <%= form_for @request do |f| %>
+            <%= render "shared/error_messages", object: @request %>
+            <%= f.hidden_field :status, value: :false %>
+            <%= f.text_field :title, required: "",
+              placeholder: t("request.input_title"), class: "txt" %>
+            <%= f.text_area :content, placeholder: t("request.input_content"),
+              class: "txt_3" %>
+            <%= f.submit "submit", class: "txt2" %>
+          <% end %>
+        </div>
+      </div>
+    </div
+  </div>
+</div>
